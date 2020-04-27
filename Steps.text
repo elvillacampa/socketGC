@@ -1,0 +1,75 @@
+# socketGC
+THIS IS A STEP BY STEP PROCESS OF WRITING THIS CODE
+
+SOCKETGC using NodeJS 
+
+1. If you don't have nodeJS installed yet, get your installer from https://nodejs.org/en/.
+2. Create the directory of your project ,open the cmd line inside, and run [ $ npm init  ] that will create the package.json file.
+3. Install Socket and Express  [ $ npm install socketio] [ $ npm install express]
+SocketIO has two parts: a server-side library for NodeJS ( installed using npm ) and a client-side library that runs in the browser (Step 4)
+4. Open your browser and paste this [ https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js ] in the URL bar, when loaded, hit Ctrl + S and save it inside the project.
+5. Create your index.html file that will contain our html code for the interface and all.
+6. Now, this is optional, but I will create a virtual host this project.
+7. Inject the socket.io.js to your index.html so that we can use it.
+8. Create your index.js file that will contain our client side scripts and inject it to index.html
+9. We'll be using Jquery and Bootstrap for our client side scripts and frontend design so go ahead and paste this links just like what we did with socketio and inject these to our index.html
+[ https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css ]
+[ https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js ]
+[ https://code.jquery.com/jquery-1.12.4.min.js ]
+10. Let's do the inteface of our chatting app. Copy and Paste this inside the body.
+<div class="container">
+<h2>Chat Messages</h2>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Active Users</p>
+      <ul class="list-group user_list" id="user_list">
+      </ul>
+    </div>
+    <div class="col-sm-8 border-left-dark">
+      <p>Chat</p>
+      <div class="box">
+      </div>
+      <div class="chatbox">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control " id="msgbox" name="">
+          </div>
+        </form>
+        <button class="btn btn-outline-success" id="send">Send</button>
+      </div>
+      </div>
+  </div>
+</div>
+11. Let's add some custom CSS that we can use later. Create your index.css file and inject it in your index.html. 
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+.border-left-dark{
+  border-left: 1px solid black !important;
+
+}
+12. Now, let's do some server-side scripting. Create your server.js file. 
+Import socketio, express and http, and setup some othe variables for initializing the server.
+Lets instantiate express and create our server from it
+Now let's create a method that will contain our socket methods. This method will take the server as its parameter
+
+13. Before we go deep in our server, let's setup some initials in our client side script.
+Connect to our server
+Let's emit an action to our server immediately after the  page is loaded to inform our server that there is a new user.
+ 
+14. To keep track of our active users
+we'll create a listener on our server for above action that will store the details of the new user.
+We then emit an action from the server to all the clients to inform them that there is a new user, catch up, and update user list, also with corresponding client side receivers
+
+15. Before we go back to the clietn side, we should put on a handler on the server to delete the user from our user list upon disconnet. Socket automatically fires a disconnect event on page refresh or close so yeah.
+
+16. Now, lets do some DOM manipulation to display the messages and active users on our page
+17. Now let's do the messaging. If you look again our html, I have already setup the classes and ids we need to send the message.
+18. You Done!
