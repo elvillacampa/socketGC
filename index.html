@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Group Chat</title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/socket.io.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div class="container">
+<h2>Chat Messages</h2>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Active Users</p>
+      <ul class="list-group user_list" id="user_list">
+      </ul>
+    </div>
+    <div class="col-sm-8 border-left-dark">
+      <p>Chat</p>
+      <div class="box">
+      </div>
+      <div class="chatbox">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control " id="msgbox" name="">
+          </div>
+        </form>
+        <button class="btn btn-outline-success" id="send">Send</button>
+      </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>

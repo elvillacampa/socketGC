@@ -1,0 +1,14 @@
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+.border-left-dark{
+  border-left: 1px solid black !important;
+
+}
